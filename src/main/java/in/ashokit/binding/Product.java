@@ -1,9 +1,17 @@
 package in.ashokit.binding;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Product {
+	@NotNull(message = "id is required")
 private Integer pid;
+	@NotNull(message = "name is required")
+	@Size(min = 3, max = 8)
 private String pname;
-private Double price;
+	@NotNull(message = "price is required")
+	private Double price;
 public Integer getPid() {
 	return pid;
 }
